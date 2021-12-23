@@ -32,13 +32,19 @@
                                     <action selector="segmentedControllAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="jHZ-iW-RPE"/>
                                 </connections>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gqQ-rc-1cq">
+                                <rect key="frame" x="14" y="222.5" width="347" height="31"/>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Fhl-cQ-dHP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="1nI-kG-sjt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gqQ-rc-1cq" secondAttribute="trailing" constant="16" id="5Kl-1d-LAc"/>
                             <constraint firstItem="UsW-4X-oQD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="186" id="7EQ-iB-aNJ"/>
+                            <constraint firstItem="gqQ-rc-1cq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7LM-kR-9eS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fhl-cQ-dHP" secondAttribute="trailing" constant="16" id="8ac-ir-gCD"/>
+                            <constraint firstItem="gqQ-rc-1cq" firstAttribute="top" secondItem="UsW-4X-oQD" secondAttribute="bottom" constant="16" id="dlq-XQ-2kS"/>
                             <constraint firstItem="UsW-4X-oQD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fKE-Jg-j3c"/>
                             <constraint firstItem="Fhl-cQ-dHP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="o0j-My-qdz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UsW-4X-oQD" secondAttribute="trailing" constant="16" id="zzg-Ul-0bo"/>
@@ -47,6 +53,7 @@
                     <connections>
                         <outlet property="mainLable" destination="UsW-4X-oQD" id="A9a-GP-FbC"/>
                         <outlet property="segmentedControll" destination="Fhl-cQ-dHP" id="tvr-zl-DmI"/>
+                        <outlet property="slider" destination="gqQ-rc-1cq" id="Ef5-Tv-j40"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
