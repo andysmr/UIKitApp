@@ -34,26 +34,55 @@
                             </segmentedControl>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gqQ-rc-1cq">
                                 <rect key="frame" x="14" y="222.5" width="347" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="cOz-Gt-rKq"/>
+                                </connections>
                             </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xh1-5a-Qz0">
+                                <rect key="frame" x="16" y="268.5" width="343" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exj-1z-9em">
+                                <rect key="frame" x="16" y="334.5" width="343" height="50"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Готово">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="mainButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jiM-Rr-ww6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Fhl-cQ-dHP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="1nI-kG-sjt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gqQ-rc-1cq" secondAttribute="trailing" constant="16" id="5Kl-1d-LAc"/>
+                            <constraint firstItem="exj-1z-9em" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6wG-Si-k24"/>
                             <constraint firstItem="UsW-4X-oQD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="186" id="7EQ-iB-aNJ"/>
                             <constraint firstItem="gqQ-rc-1cq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7LM-kR-9eS"/>
+                            <constraint firstItem="Xh1-5a-Qz0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7LQ-Ts-y0S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fhl-cQ-dHP" secondAttribute="trailing" constant="16" id="8ac-ir-gCD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xh1-5a-Qz0" secondAttribute="trailing" constant="16" id="WyF-p9-zaI"/>
                             <constraint firstItem="gqQ-rc-1cq" firstAttribute="top" secondItem="UsW-4X-oQD" secondAttribute="bottom" constant="16" id="dlq-XQ-2kS"/>
                             <constraint firstItem="UsW-4X-oQD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fKE-Jg-j3c"/>
+                            <constraint firstItem="exj-1z-9em" firstAttribute="top" secondItem="Xh1-5a-Qz0" secondAttribute="bottom" constant="32" id="fOa-q6-NZI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="exj-1z-9em" secondAttribute="trailing" constant="16" id="iqz-y6-P0f"/>
                             <constraint firstItem="Fhl-cQ-dHP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="o0j-My-qdz"/>
+                            <constraint firstItem="Xh1-5a-Qz0" firstAttribute="top" secondItem="gqQ-rc-1cq" secondAttribute="bottom" constant="16" id="wYG-yA-91y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UsW-4X-oQD" secondAttribute="trailing" constant="16" id="zzg-Ul-0bo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mainButton" destination="exj-1z-9em" id="6Gy-Zk-06b"/>
                         <outlet property="mainLable" destination="UsW-4X-oQD" id="A9a-GP-FbC"/>
                         <outlet property="segmentedControll" destination="Fhl-cQ-dHP" id="tvr-zl-DmI"/>
                         <outlet property="slider" destination="gqQ-rc-1cq" id="Ef5-Tv-j40"/>
+                        <outlet property="textButton" destination="Xh1-5a-Qz0" id="6HQ-2I-Z6j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -62,8 +91,17 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

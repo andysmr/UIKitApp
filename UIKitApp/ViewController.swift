@@ -12,25 +12,33 @@ class ViewController: UIViewController {
     @IBOutlet var segmentedControll: UISegmentedControl!
     @IBOutlet var slider: UISlider!
     @IBOutlet var mainLable: UILabel!
+    @IBOutlet var textButton: UITextField!
+    @IBOutlet var mainButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // segmentedControl
         segmentedControll.insertSegment(withTitle: "Third", at: 2, animated: false)
         
-        //lable
+        // MARK: lable
         mainLable.text = ""
         mainLable.font = mainLable.font.withSize(30)
         mainLable.textAlignment = .center
         mainLable.numberOfLines = 2
         
-        //slider
+        // MARK: slider
         slider.value = 1
         slider.minimumValue = 1
         slider.maximumValue = 100
         slider.minimumTrackTintColor = .yellow
         slider.maximumTrackTintColor = .blue
         slider.thumbTintColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+        
+        mainLable.text = String(slider.value)
         // Do any additional setup after loading the view.
+        textButton.keyboardType = .numberPad
+        
+        mainButton.layer.cornerRadius = 10
+        
     }
 
 
@@ -48,6 +56,15 @@ class ViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    @IBAction func sliderAction() {
+        mainLable.text = String(Int(slider.value))
+    }
+    
+    @IBAction func mainButtonAction(_ sender: Any) {
+        guard let text = textButton.text, !text.isEmpty else { return }
+        mainLable.text = text
     }
 }
 
