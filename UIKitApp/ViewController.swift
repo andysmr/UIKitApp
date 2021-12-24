@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet var mainLable: UILabel!
     @IBOutlet var textButton: UITextField!
     @IBOutlet var mainButton: UIButton!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var secondLable: UILabel!
+    @IBOutlet var switchForm: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         // segmentedControl
@@ -65,6 +68,22 @@ class ViewController: UIViewController {
     @IBAction func mainButtonAction(_ sender: Any) {
         guard let text = textButton.text, !text.isEmpty else { return }
         mainLable.text = text
+    }
+    
+    @IBAction func datePickerAction(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .full
+        mainLable.text = dateFormatter.string(from: datePicker.date)
+    }
+    
+    @IBAction func switcherAction(_ sender: Any) {
+        mainLable.isHidden = !switchForm.isOn
+        if !switchForm.isOn {
+            secondLable.text = "Включить"
+        }
+        else {
+            secondLable.text = "Выключить"
+        }
     }
 }
 
